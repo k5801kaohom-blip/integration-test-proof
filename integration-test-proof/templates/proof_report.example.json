@@ -1,0 +1,58 @@
+{
+  "_comment": "Produced by scripts/negative_control.py --json <path>. One stage entry per assertion; outcome summarises the run. Read outcome first: PROVEN and DETECTED are acceptable, MISSED and DAMAGED mean the mechanism is not trustworthy, BASELINE_BROKEN means the deliverable was already invalid.",
+  "generated_at": "2026-09-27T00:00:00",
+  "deliverable": "/path/to/deck.pptx",
+  "fault": "ooxml_duplicate_latin",
+  "outcome": "PROVEN",
+  "summary": "The pipeline caught the injected fault and recovered it without losing content.",
+  "stages": [
+    {
+      "stage": "baseline",
+      "ok": true,
+      "detail": "detector exit=0"
+    },
+    {
+      "stage": "inject",
+      "ok": true,
+      "detail": "{\"recipe\": \"ooxml_duplicate_latin\", \"text_runs_seeded\": 8, \"duplicates_injected\": 8, \"exit\": 0}"
+    },
+    {
+      "stage": "detect_faulted",
+      "ok": true,
+      "detail": "detector exit=1 | FAIL duplicate singleton children ppt/slides/slide1.xml: <rPr> contains 2 copies of <latin> (at most 1 allowed)"
+    },
+    {
+      "stage": "recover",
+      "ok": true,
+      "detail": "repair exit=0 | repairs applied (8): ppt/slides/slide1.xml: removed duplicate <latin> inside <rPr>"
+    },
+    {
+      "stage": "detect_recovered",
+      "ok": true,
+      "detail": "detector exit=0"
+    },
+    {
+      "stage": "content_preserved",
+      "ok": true,
+      "detail": "no drift"
+    }
+  ],
+  "content_original": {
+    "readable": true,
+    "parts": 62,
+    "slides": 8,
+    "sheets": 0,
+    "media": 16,
+    "text_runs": 8
+  },
+  "content_recovered": {
+    "readable": true,
+    "parts": 62,
+    "slides": 8,
+    "sheets": 0,
+    "media": 16,
+    "text_runs": 8
+  },
+  "detector_output": "FAIL duplicate singleton children ...",
+  "recovered_path": "proof_evidence/deck.recovered.pptx"
+}
