@@ -1,6 +1,10 @@
 ---
 name: integration-test-proof
-description: Prove that a composed pipeline actually holds, by running a negative control instead of a clean run. Use when asked to integration-test or end-to-end test two or more tools or skills together, when asked to demonstrate or provide evidence that a mechanism works, when building a demo that must prove a safeguard fires, or when a deliverable needs both structural and visual confirmation. Covers fault injection, before/after content fingerprinting, evidence packs, and honest reporting of MISSED and DAMAGED outcomes.
+description: 觸發詞：整合測試、端到端測試、證明有效、負向控制、注入缺陷、測試兩個技能、證明機制有效、證據報告、流程真的有效嗎。Prove that a composed pipeline actually holds, by running a negative control instead of a clean run. Use when asked to integration-test or end-to-end test two or more tools or skills together, when asked to demonstrate or provide evidence that a mechanism works, when building a demo that must prove a safeguard fires, or when a deliverable needs both structural and visual confirmation. Covers fault injection, before/after content fingerprinting, evidence packs, and honest reporting of MISSED and DAMAGED outcomes.
+metadata:
+  alias_zh-TW: 整合測試證明
+  short_alias_zh-TW: 整合測試
+  keywords_zh-TW: 整合測試、整合測試證明、端到端測試、證明有效、負向控制、注入缺陷、測試兩個技能、證明機制有效、證據報告、流程真的有效嗎
 ---
 
 # Integration Test Proof
